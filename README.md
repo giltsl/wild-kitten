@@ -12,13 +12,13 @@ Installation
 ------------
 
 To install Wild Kitten on your device or emulator, run
-adb install -r WildKitten-release-unsigned.apk
+`adb install -r WildKitten-release-unsigned.apk`
 
 To perform a specific action, run
-adb shell am startservice -n com.testfairy.wildkitten/.KittenService --esn ACTION
+`adb shell am startservice -n com.testfairy.wildkitten/.KittenService --esn ACTION`
 
-For example, to turn off WIFI, use
-adb shell am startservice -n com.testfairy.wildkitten/.KittenService --esn disableWifi
+For example, to turn off WIFI, run
+`adb shell am startservice -n com.testfairy.wildkitten/.KittenService --esn disableWifi`
 
 Actions
 -------
