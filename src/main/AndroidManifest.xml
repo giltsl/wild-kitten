@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.testfairy.wildkitten" android:versionCode="1" android:versionName="1.0">
+
+	<uses-sdk android:minSdkVersion="8" android:targetSdkVersion="19" />
+
+	<!-- permissions for killAllApps -->
+	<uses-permission android:name="android.permission.GET_TASKS" />
+	<uses-permission android:name="android.permission.RESTART_PACKAGES" />
+	<uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+
+	<!-- permissions for enableWifi and disableWifi -->
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+	<!-- permissions for disableKeyguard -->
+	<uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+
+	<application android:label="WildKitten">
+		<activity android:name=".KillAllAppsActivity">
+		</activity>
+		<service android:name=".KittenService" android:exported="true" />
+	</application>
+
+</manifest>
