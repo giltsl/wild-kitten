@@ -27,6 +27,9 @@ Here is a list of supported actions:
 
 * enableWifi        - enable WIFI, connects to last network
 * disableWifi       - disable WIFI and disconnect from network
+* enableNetwork     - enable 3G network
+* disableNetwork    - disable 3G network
+* checkNetwork      - check if network is accessible (either 3G or WIFI)
 * killAllApps       - kills all running apps (other than system and home app)
 * disableKeyguard   - disable keyguard lock screen
 * version           - return version of Wild Kitten
@@ -54,13 +57,17 @@ Wild Kitten was developed as part of our automatic tests at TestFairy (https://w
 For every build, we run hundreds of tests, some on real devices and some emulators. Our product
 requires that we support all API levels, OEM devices, serious memory limitations and other quirks.
 
-We are releasing Wild Kitten for the general public, we all deserve better products!
+We are releasing Wild Kitten to the general public, we all deserve better products!
 
-For support (/moral), feature requests and general talk, feel free to contact Gil Megidish at
-gil@testfairy.com
+For support (/moral), feature requests, bugs and general talk, feel free to contact Gil Megidish at
+`gil@testfairy.com`
 
 TestFairy Ltd.
+
+
 https://www.testfairy.com
+
+
 https://github.com/testfairy/
 
 

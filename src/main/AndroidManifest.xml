@@ -3,6 +3,9 @@
 
 	<uses-sdk android:minSdkVersion="8" android:targetSdkVersion="19" />
 
+	<!-- permissions for checkNetwork -->
+	<uses-permission android:name="android.permission.INTERNET" />
+
 	<!-- permissions for killAllApps -->
 	<uses-permission android:name="android.permission.GET_TASKS" />
 	<uses-permission android:name="android.permission.RESTART_PACKAGES" />
@@ -11,6 +14,10 @@
 	<!-- permissions for enableWifi and disableWifi -->
 	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+	<!-- permissions for enableNetwork and disableNetwork -->
+	<uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+	<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
 
 	<!-- permissions for disableKeyguard -->
 	<uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
