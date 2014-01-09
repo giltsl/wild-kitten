@@ -12,7 +12,7 @@ Installation
 ------------
 
 Compile Wild Kitten or download a pre-compiled binary from:
-https://www.testfairy.com/downloads/WildKitten-debug-unsigned.apk
+https://www.testfairy.com/downloads/WildKitten-debug-unaligned.apk
 
 To install Wild Kitten on your device or emulator, run
 `adb install -r WildKitten-debug-unsigned.apk`
