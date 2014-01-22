@@ -11,8 +11,10 @@ for a root permission on the device, only for an apk to be installed.
 Installation
 ------------
 
-Compile Wild Kitten or download a pre-compiled binary from:
-https://www.testfairy.com/downloads/WildKitten-debug-unaligned.apk
+Latest ***precompiled binaries*** can be downloaded at 
+```
+https://www.testfairy.com/plugins/WildKitten-debug-unsigned.apk
+```
 
 To install Wild Kitten on your device or emulator, run
 `adb install -r WildKitten-debug-unsigned.apk`
@@ -33,8 +35,10 @@ Here is a list of supported actions:
 * enableNetwork     - enable 3G network
 * disableNetwork    - disable 3G network
 * checkNetwork      - check if network is accessible (either 3G or WIFI)
-* killAllApps       - kills all running apps (other than system and home app)
+* killAllApps       - kill all running apps (other than system and home app)
 * disableKeyguard   - disable keyguard lock screen
+* acquireWakeLock   - acquire wake lock (turns on screen indefinitely)
+* releaseWakeLock   - release wake lock if previously acquired
 * version           - return version of Wild Kitten
 
 Result
