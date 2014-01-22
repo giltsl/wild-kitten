@@ -9,6 +9,7 @@ import android.telephony.TelephonyManager;
 import android.os.IBinder;
 import android.util.Log;
 import android.os.Build;
+import android.os.PowerManager;
 import org.apache.http.*;
 import org.apache.http.client.methods.*;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -16,6 +17,8 @@ import java.lang.reflect.*;
 import java.util.*;
 
 public class KittenService extends IntentService {
+
+	static PowerManager.WakeLock wakeLock = null;
 
 	public KittenService(String name) {
 		super(name);
@@ -34,6 +37,7 @@ public class KittenService extends IntentService {
 	@Override
 	protected void onHandleIntent(Intent intent) {
 		Log.v(Config.TAG, "onHandleIntent " + intent);
+		Log.d(Config.TAG, "Extra: " + Arrays.toString(intent.getExtras().keySet().toArray()));
 
 		try {
 			if (intent.hasExtra("killAllApps")) {
@@ -50,6 +54,10 @@ public class KittenService extends IntentService {
 				disableKeyguard();
 			} else if (intent.hasExtra("checkNetwork")) {
 				checkNetwork();
+			} else if (intent.hasExtra("acquireWakeLock")) {
+				acquireWakeLock();
+			} else if (intent.hasExtra("releaseWakeLock")) {
+				releaseWakeLock();
 			} else if (intent.hasExtra("version")) {
 				version();
 			}
@@ -216,6 +224,39 @@ public class KittenService extends IntentService {
 		KeyguardManager keyguardManager = (KeyguardManager)this.getSystemService(Context.KEYGUARD_SERVICE);
 		KeyguardManager.KeyguardLock lock = keyguardManager.newKeyguardLock("activity_classname");
 		lock.disableKeyguard();
+		success();
+	}
+
+	/**
+	 * Acquire a wake lock. This will turn on the device (if not on) and set keyboard and screen to full brightness.
+	 *
+	 * Call releaseWakeLock to turn the device screen off.
+	 *
+	 * @return
+	 */
+	private void acquireWakeLock() {
+		if (wakeLock == null) {
+			Context context = getApplicationContext();
+			PowerManager pm = (PowerManager)context.getSystemService(Context.POWER_SERVICE);
+			wakeLock = pm.newWakeLock(PowerManager.FULL_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP, Config.TAG);
+			wakeLock.acquire();
+			Log.v(Config.TAG, "Wakelock acquired at " + wakeLock);
+		}
+
+		success();
+	}
+
+	/**
+	 * Release wake lock if previous acquired with acquireWakeLock.
+	 *
+	 * @return
+	 */
+	private void releaseWakeLock() {
+		if (wakeLock != null) {
+			wakeLock.release();
+			wakeLock = null;
+		}
+
 		success();
 	}
 

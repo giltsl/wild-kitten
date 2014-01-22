@@ -22,6 +22,9 @@
 	<!-- permissions for disableKeyguard -->
 	<uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
 
+	<!-- permissions for acquireWakeLock and releaseWakeLock -->
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+
 	<application android:label="WildKitten">
 		<activity android:name=".KillAllAppsActivity">
 		</activity>
