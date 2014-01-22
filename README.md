@@ -11,8 +11,11 @@ for a root permission on the device, only for an apk to be installed.
 Installation
 ------------
 
+Compile Wild Kitten or download a pre-compiled binary from:
+https://www.testfairy.com/downloads/WildKitten-debug-unaligned.apk
+
 To install Wild Kitten on your device or emulator, run
-`adb install -r WildKitten-release-unsigned.apk`
+`adb install -r WildKitten-debug-unsigned.apk`
 
 To perform a specific action, run
 `adb shell am startservice -n com.testfairy.wildkitten/.KittenService --esn ACTION`
@@ -49,6 +52,22 @@ http://online-generator.com/name-generator/project-name-generator.php
 
 Really, it was either that or "Serious Moose" :)
 
+Compiling
+---------
+
+Wild Kitten was developed using Gradle, to build from command-line, simply run
+`gradlew packageDebug`
+
+You might to set ANDROID_HOME environment variable beforehand, for example (with Android Studio on OSX)
+`export ANDROID_HOME=/Applications/Android\ Studio.app/sdk`
+
+Uninstalling
+------------
+
+Always remeber that Wild Kitten is for testing purposes only. To uninstall Wild Kitten from your test device, simple run:
+`adb uninstall com.testfairy.wildkitten`
+
+If you removed used disableKeyguard, the device will restore the default keyguard lock.
 
 Contact
 -------
