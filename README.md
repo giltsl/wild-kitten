@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/testfairy/wild-kitten.svg?branch=master)](https://travis-ci.org/testfairy/wild-kitten)
+
 Wild Kitten
 -----------
 
