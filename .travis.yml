@@ -1,7 +1,6 @@
 language: android
-jdk:
-  - oraclejdk7
-  - openjdk7
- 
-before_install: ls -l
+android:
+  components:
+    - build-tools-19.1.0
+    - android-19
 
