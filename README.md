@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/testfairy/wild-kitten.svg?branch=master)](https://travis-ci.org/testfairy/wild-kitten)
+[![Build Status](https://travis-ci.org/giltsl/wild-kitten.svg?branch=master)](https://travis-ci.org/giltsl/wild-kitten)
 
 Wild Kitten
 -----------
